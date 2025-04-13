@@ -1,7 +1,17 @@
 package org.ses.models;
 
-import java.time.LocalDate;
+import lombok.Getter;
+import lombok.Setter;
+import org.ses.enums.Gender;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+@Setter
+@Getter
+
+@Document(collection = "patients")
 public class Patient extends User{
     private String bloodType;
     private String allergies;
@@ -9,7 +19,7 @@ public class Patient extends User{
     private double weight;
     private double height;
     private String patientId;
-    private LocalDate lastVisit;
+    private LocalDateTime lastVisit;
     private String prescription;
     private String testReport;
 
@@ -17,87 +27,20 @@ public class Patient extends User{
         super();
     }
 
-    public Patient(String bloodType, String allergies, String diseases, double weight, double height, String patientId, LocalDate lastVisit, String prescription, String testReport) {
+    public Patient(String fullName, String email, String phoneNumber, LocalDate dateOfBirth,
+                   Gender gender, Address address, String password, String confirmPassword,
+                   String bloodType, String allergies, String diseases, double height,
+                   double weight, String patientId, LocalDateTime lastVisit,
+                   String prescription, String testReport) {
+        super(fullName, email, phoneNumber, dateOfBirth, gender, address, password, confirmPassword);
         this.bloodType = bloodType;
         this.allergies = allergies;
         this.diseases = diseases;
-        this.weight = weight;
         this.height = height;
+        this.weight = weight;
         this.patientId = patientId;
         this.lastVisit = lastVisit;
         this.prescription = prescription;
-        this.testReport = testReport;
-    }
-
-    public String getBloodType() {
-        return bloodType;
-    }
-
-    public void setBloodType(String bloodType) {
-        this.bloodType = bloodType;
-    }
-
-    public String getAllergies() {
-        return allergies;
-    }
-
-    public void setAllergies(String allergies) {
-        this.allergies = allergies;
-    }
-
-    public String getDiseases() {
-        return diseases;
-    }
-
-    public void setDiseases(String diseases) {
-        this.diseases = diseases;
-    }
-
-    public double getWeight() {
-        return weight;
-    }
-
-    public void setWeight(double weight) {
-        this.weight = weight;
-    }
-
-    public double getHeight() {
-        return height;
-    }
-
-    public void setHeight(double height) {
-        this.height = height;
-    }
-
-    public String getPatientId() {
-        return patientId;
-    }
-
-    public void setPatientId(String patientId) {
-        this.patientId = patientId;
-    }
-
-    public LocalDate getLastVisit() {
-        return lastVisit;
-    }
-
-    public void setLastVisit(LocalDate lastVisit) {
-        this.lastVisit = lastVisit;
-    }
-
-    public String getPrescription() {
-        return prescription;
-    }
-
-    public void setPrescription(String prescription) {
-        this.prescription = prescription;
-    }
-
-    public String getTestReport() {
-        return testReport;
-    }
-
-    public void setTestReport(String testReport) {
         this.testReport = testReport;
     }
 }
