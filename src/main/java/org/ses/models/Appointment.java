@@ -5,7 +5,8 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.time.LocalDate;
+//import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Setter
 @Getter
@@ -16,12 +17,12 @@ public class Appointment {
     private String id;
     private Patient patient;
     private Doctor doctor;
-    private LocalDate appointmentDateTime;
+    private LocalDateTime appointmentDateTime;
     private boolean approved;
 
     public Appointment() {}
 
-    public Appointment(Patient patient, Doctor doctor, LocalDate appointmentDateTime, boolean approved) {
+    public Appointment(Patient patient, Doctor doctor, LocalDateTime appointmentDateTime, boolean approved) {
         this.patient = patient;
         this.doctor = doctor;
         this.appointmentDateTime = appointmentDateTime;

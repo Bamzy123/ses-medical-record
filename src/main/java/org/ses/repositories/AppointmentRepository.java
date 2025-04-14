@@ -6,11 +6,9 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
 
 public interface AppointmentRepository extends MongoRepository<Appointment, String> {
-    Optional<Appointment> findByDoctorEmailAndAppointmentDateTime(String doctor_email, LocalDate appointmentDateTime);
-    List<Appointment> findByDoctorEmail(String doctor_email);
+    List<Appointment> findByDoctorEmailAndAppointmentDateTime(String doctor_email, LocalDateTime appointmentDateTime);
 
-    LocalDate appointmentDateTime(LocalDate appointmentDateTime);
+    List<Appointment> findByDoctorEmail(String doctorEmail);
 }

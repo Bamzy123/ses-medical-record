@@ -5,7 +5,6 @@ import org.ses.exceptions.ValidationException;
 import org.ses.models.Patient;
 import org.ses.repositories.PatientRepository;
 import org.ses.validators.Validator;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -20,7 +19,7 @@ public class PatientService {
     }
 
     public Patient registerPatient(RegisterUserDTO dto) {
-        if (!Validator.validateRegistration(dto)) {
+        if (Validator.validateRegistration(dto)) {
             throw new ValidationException("Register data is invalid.");
         }
         Patient patient = new Patient(

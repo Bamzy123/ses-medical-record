@@ -12,7 +12,7 @@ public class Validator {
     }
 
     public static boolean isPasswordMatching(String password, String confirmPassword) {
-        return password != null && confirmPassword != null && password.equals(confirmPassword);
+        return password != null && password.equals(confirmPassword);
     }
 
     public static boolean isPhoneNumberValid(String phoneNumber) {
@@ -20,8 +20,7 @@ public class Validator {
     }
 
     public static boolean validateRegistration(RegisterUserDTO dto) {
-        return isEmailValid(dto.getEmail())
-                && isPasswordMatching(dto.getPassword(), dto.getConfirmPassword())
-                && isPhoneNumberValid(dto.getPhoneNumber());
+        return !isEmailValid(dto.getEmail()) || !isPasswordMatching(dto.getPassword(), dto.getConfirmPassword())
+                || !isPhoneNumberValid(dto.getPhoneNumber());
     }
 }
