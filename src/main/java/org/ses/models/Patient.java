@@ -23,10 +23,6 @@ public class Patient extends User{
     private String prescription;
     private String testReport;
 
-    public Patient() {
-        super();
-    }
-
     public Patient(String fullName, String email, String phoneNumber, LocalDate dateOfBirth,
                    Gender gender, Address address, String password, String confirmPassword,
                    String bloodType, String allergies, String diseases, double height,

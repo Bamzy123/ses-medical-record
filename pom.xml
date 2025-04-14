@@ -35,13 +35,6 @@
             <artifactId>spring-boot-starter-data-mongodb</artifactId>
         </dependency>
 
-        <!-- Validation API (if you need javax validation) -->
-        <dependency>
-            <groupId>jakarta.validation</groupId>
-            <artifactId>jakarta.validation-api</artifactId>
-            <version>3.0.2</version>
-        </dependency>
-
         <!-- Lombok (optional, for reducing boilerplate code) -->
         <dependency>
             <groupId>org.projectlombok</groupId>

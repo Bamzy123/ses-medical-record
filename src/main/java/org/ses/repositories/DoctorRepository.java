@@ -2,7 +2,6 @@ package org.ses.repositories;
 
 import org.ses.models.Doctor;
 import org.springframework.data.mongodb.repository.MongoRepository;
-import org.springframework.data.repository.CrudRepository;
 
 import java.util.Optional;
 

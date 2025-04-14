@@ -20,8 +20,6 @@ public class Appointment {
     private LocalDateTime appointmentDateTime;
     private boolean approved;
 
-    public Appointment() {}
-
     public Appointment(Patient patient, Doctor doctor, LocalDateTime appointmentDateTime, boolean approved) {
         this.patient = patient;
         this.doctor = doctor;

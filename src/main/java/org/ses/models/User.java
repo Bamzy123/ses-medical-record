@@ -21,8 +21,6 @@ public abstract class User {
     private String password;
     private String confirmPassword;
 
-    public User() {}
-
     public User(String fullName, String email, String phoneNumber, LocalDate birthOfDate, Gender gender, Address address, String password, String confirmPassword) {
         this.fullName = fullName;
         this.email = email;

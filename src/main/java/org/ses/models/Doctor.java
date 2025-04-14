@@ -14,10 +14,6 @@ import java.time.LocalDate;
 public class Doctor extends User{
     private String speciality;
 
-    public Doctor() {
-        super();
-    }
-
     public Doctor(String fullName, String email, String phoneNumber, LocalDate dateOfBirth, Gender gender, Address address,
                   String password, String confirmPassword, String specialization) {
         super(fullName, email, phoneNumber, dateOfBirth, gender, address, password, confirmPassword);
