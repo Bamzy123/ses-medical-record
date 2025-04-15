@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.ses.enums.Gender;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 
 import java.time.LocalDate;
 
@@ -16,7 +17,11 @@ public abstract class User {
     private String email;
     private String phoneNumber;
     private LocalDate birthOfDate;
+
+    @DBRef
     private Gender gender;
+
+    @DBRef
     private Address address;
     private String password;
     private String confirmPassword;
